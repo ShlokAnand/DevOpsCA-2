@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Install Dependencies') {
+            steps {
+                bat '"C:\\Users\\Shlok Anand\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install -r requirements.txt'
+            }
+        }
+
+        stage('Run Test') {
+            steps {
+                bat '"C:\\Users\\Shlok Anand\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" test_form.py'
+            }
+        }
+    }
+}
